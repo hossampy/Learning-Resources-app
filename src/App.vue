@@ -1,27 +1,30 @@
-<template>
-    <LearnigResources v-for="Resource in savedResources" :key="Resource.id"></LearnigResources>
+<template >
+    <LearnigResources v-for="res in savedresources" :key="res.id" :title="res.title" :description="res.description"
+        :link="res.link"></LearnigResources>
+
+
 </template>
 
 <script>
-import LearnigResources from './componets/LearnigResources/LearnigResources.vue'
+import LearnigResources from './components/learning-resource/LearnigResources.vue'
 export default {
     components:{
         LearnigResources
     },
 data(){
     return{
-        savedResources:[
+        savedresources:[
             {
              id:'vuejs',
              title:'documents',
              description:'official documents',
-             linke:'vuejs.org'
+            link:'vuejs.org'
             },
             {
              id: 'google',
              title: 'documents google',
             description: 'google documents',
-            linke: 'google.com'
+            link: 'google.com'
             }
         ]
     }

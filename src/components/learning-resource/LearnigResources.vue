@@ -8,7 +8,7 @@
         </div>
         <p>{{ description }}</p>
         <nav>
-            <a :href="linke">vue linek</a>
+            <a :href="link">vue linek</a>
         </nav>
     </li>
 
@@ -16,7 +16,7 @@
 
 <script>
 export default {
-    props: ['title','description','linke']
+    props: ['title', 'description','link'] /* astana rahom yjoke men perent */ 
 
 }
 </script>
