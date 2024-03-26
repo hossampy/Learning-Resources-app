@@ -1,18 +1,23 @@
 <template >
-    <storedRes :resources="savedresources"></storedRes>
+    <TheHeader :title="title1"> </TheHeader>
+    <storedRes :resources="savedresources">
+    </storedRes>
 
 
 </template>
 
 <script> 
 import storedRes from './components/learning-resource/storedRes.vue'
+import TheHeader from './components/layouts/TheHeader.vue'
 
 export default {
     components:{
-        storedRes
+        storedRes,
+        TheHeader
     },
 data(){
     return{
+        title1:'remmberme',
         savedresources:[
             {
              id:'vuejs',
