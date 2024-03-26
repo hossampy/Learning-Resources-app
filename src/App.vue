@@ -1,15 +1,15 @@
 <template >
-    <LearnigResources v-for="res in savedresources" :key="res.id" :title="res.title" :description="res.description"
-        :link="res.link"></LearnigResources>
+    <storedRes :resources="savedresources"></storedRes>
 
 
 </template>
 
-<script>
-import LearnigResources from './components/learning-resource/LearnigResources.vue'
+<script> 
+import storedRes from './components/learning-resource/storedRes.vue'
+
 export default {
     components:{
-        LearnigResources
+        storedRes
     },
 data(){
     return{
@@ -33,5 +33,18 @@ data(){
 </script>
 
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    margin: 0;
+}
 
 </style>
