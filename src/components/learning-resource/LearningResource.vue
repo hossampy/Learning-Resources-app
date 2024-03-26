@@ -17,10 +17,11 @@
 </template>
 
 <script>
-import BaseCard from '../UI/BaseCard.vue'
+
 export default {
-  components: { BaseCard },
-    props: ['title', 'description','link'] /* astana rahom yjoke men perent */ 
+  
+    props: ['title', 'description','link'] /* astana rahom yjoke men perent */ ,
+    
 
 }
 </script>
