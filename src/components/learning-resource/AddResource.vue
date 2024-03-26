@@ -1,7 +1,19 @@
 <template>
+  <base-dialog v-if="inputisinvalid" title="input is invalid">
+    <template v-slot:default>
+      <p>input is invalid </p>
+      <p>please chavk your info and add a correct input </p>
+
+    </template>
+    <template v-slot:action>
+      <base-button @click="closedialog">okey</base-button>
+    </template>
+
+  </base-dialog>
   <base-card>
+
     <form>
-      <div class="form-control" @submit.prevent="SubmitData">
+      <div class="form-control">
         <label for="title">Title</label>
         <input id="title" name="title" type="text" ref="titleInput" />
       </div>
@@ -14,13 +26,22 @@
         <input id="link" name="link" type="url" ref="linkInput" />
       </div>
       <div>
-        <base-button type="submit" @click="SubmitData">Add Resource</base-button>
+        <base-button type="submit" @click.prevent="SubmitData">Add Resource</base-button>
       </div>
     </form>
   </base-card>
 </template>
 <script>
+import BaseButton from '../UI/BaseButton.vue';
+import BaseDialog from '../UI/BaseDialog.vue';
 export default {
+  components: { BaseDialog, BaseButton },
+  data(){
+    return{
+      inputisinvalid:false,
+    }
+  },
+
   inject: [
     'Addresource'
   ],
@@ -29,7 +50,18 @@ export default {
       const enterdtitle = this.$refs.titleInput.value;
       const enterdDescription = this.$refs.descInput.value;
       const enterdlink = this.$refs.linkInput.value;
+      if (enterdtitle.trim() === '' 
+      || enterdDescription.trim() === ''
+       || enterdlink.trim()==='')
+      {
+        this.inputisinvalid =true;
+        return
+      }
+
      this.Addresource(enterdtitle, enterdDescription, enterdlink)
+    },
+    closedialog(){
+      this.inputisinvalid=false;
     }
   }
 }
