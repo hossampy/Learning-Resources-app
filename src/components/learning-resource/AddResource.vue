@@ -1,7 +1,7 @@
 <template>
   <base-card>
     <form>
-      <div class="form-control">
+      <div class="form-control" @submit.prevent="SubmitData">
         <label for="title">Title</label>
         <input id="title" name="title" type="text" ref="titleInput" />
       </div>
