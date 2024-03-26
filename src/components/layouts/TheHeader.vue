@@ -14,7 +14,7 @@ props:['title']
 header {
     width: 100%;
     height: 5rem;
-    background-color: #640032;
+    background-color: #36b5f585;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -23,5 +23,6 @@ header {
 header h1 {
     color: white;
     margin: 0;
+    text-transform: capitalize;
 }
 </style>
