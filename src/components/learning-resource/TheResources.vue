@@ -38,6 +38,7 @@ export default {
     provide() {
         return {
             resources: this.storedResources,
+            Addresource: this.AddResource
         };
     },
     computed: {
@@ -51,6 +52,16 @@ export default {
     methods: {
         setSelectedTab(tab) {
             this.selectedTab = tab;
+        },
+        AddResource(title,desc,url){
+            const newResource = {
+                id:new Date().toDateString,
+                title:title,
+                description:desc,
+                link:url
+            }
+            this.storedResources.unshift(newResource)
+            this.selectedTab ='stored-resources'
         },
     },
 };

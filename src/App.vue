@@ -16,7 +16,7 @@ export default {
     },
 data(){
     return{
-        title1:'remmberme',
+        title1:'RememberMe',
      
     }
 }
