@@ -1,8 +1,8 @@
  <template>
-    <div></div>
-   <dialog open>
+    <div @click="$emit('close')"></div>
+    <dialog open>
         <header>
-            <slot name="header"> 
+            <slot name="header">
                 <h2>{{ title }}</h2>
             </slot>
         </header>
@@ -12,19 +12,24 @@
             </slot>
         </section>
         <menu>
-            <slot name="action"></slot>
+            <slot name="action">
+                <base-button @click="$emit('close')"> close</base-button>
+            </slot>
         </menu>
-   </dialog>
- </template>
+    </dialog>
+</template>
  
  <script>
+import BaseButton from './BaseButton.vue'
 export default {
+  components: { BaseButton },
     props: {
         title: {
             type: String,
             required: false
         }
-    }
+    },
+    emits:['close']
 }
  </script>
  
@@ -54,7 +59,7 @@ export default {
  }
 
  header {
-     background-color: #3a0061;
+     background-color: #fa0d0d;
      color: white;
      width: 100%;
      padding: 1rem;

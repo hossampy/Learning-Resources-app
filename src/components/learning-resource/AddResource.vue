@@ -1,5 +1,5 @@
 <template>
-  <base-dialog v-if="inputisinvalid" title="input is invalid">
+  <base-dialog v-if="inputisinvalid" title="input is invalid" @close="closedialog">
     <template v-slot:default>
       <p>input is invalid </p>
       <p>please chavk your info and add a correct input </p>
